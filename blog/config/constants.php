@@ -83,3 +83,21 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+/*
+|
+| Sneha H Wakode
+| Custom constants for the site
+|
+*/
+$parent_folder_name = "demo";
+
+defined('ROOT_DIR')   	      OR define('ROOT_DIR', '/' . $parent_folder_name); //  set the root folder for the site
+defined('EXTRAS_DIR') 	      OR define('EXTRAS_DIR', ROOT_DIR . '/extras');
+defined('SYSTEM_RESOURCE')    OR define('SYSTEM_RESOURCE', EXTRAS_DIR . '/system');
+defined('SYSTEM_IMAGES_DIR')  OR define('SYSTEM_IMAGES_DIR', SYSTEM_RESOURCE . '/images');
+defined('SYSTEM_CSS_DIR')	  OR define('SYSTEM_CSS_DIR', SYSTEM_RESOURCE . '/css');
+defined('SYSTEM_LIBRARY_DIR') OR define('SYSTEM_LIBRARY_DIR', SYSTEM_RESOURCE . '/library');
+defined('BOOTSTRAP_DIR') 	  OR define('BOOTSTRAP_DIR', SYSTEM_LIBRARY_DIR . '/bootstrap-3.3.7');

@@ -1,0 +1,37 @@
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.65;
+}
+.bgimg-1 {
+	 /* The image used */
+    background-image: url("/demo/extras/system/images/img_parallax1.jpg");
+}
+.bgimg-2 {
+	 /* The image used */
+    background-image: url("/demo/extras/system/images/img_parallax2.jpg");
+}
+.bgimg-3 {
+	 /* The image used */
+    background-image: url("/demo/extras/system/images/img_parallax3.jpg");
+}
+body, html {
+	height: 100%;
+}
+body {
+	margin: 0px;
+	padding-top: 51px;
+}
+
+ /* Turn off parallax scrolling for tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+} 
