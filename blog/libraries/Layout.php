@@ -34,6 +34,21 @@ class Layout
 		}
 	}
 
+	/*
+	* Sneha Wakode
+	* Used to create general/common pages
+	*/
+	public function general_layout($page = "")
+	{
+		if($page !== "") {
+			$this->CI->load->view('layout/header/header_general');
+			$this->CI->load->view('layout/header/menu');
+			$this->CI->load->view($page);
+			$this->CI->load->view('layout/footer/footer_links');
+			$this->CI->load->view('layout/footer/footer');
+		}
+	}
+
 }
 
 /* End of file Layout.php */

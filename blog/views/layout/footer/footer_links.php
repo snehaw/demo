@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				hello
+				hello footer
 			</div>
 		</div>
 	</div>

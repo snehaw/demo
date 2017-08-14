@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// $this->load->view('welcome_message');
-		$this->layout->home_layout('demo');
+		// $this->layout->home_layout('demo');
 
 	}
 }
