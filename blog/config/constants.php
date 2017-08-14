@@ -99,5 +99,6 @@ defined('EXTRAS_DIR') 	      OR define('EXTRAS_DIR', ROOT_DIR . '/extras');
 defined('SYSTEM_RESOURCE')    OR define('SYSTEM_RESOURCE', EXTRAS_DIR . '/system');
 defined('SYSTEM_IMAGES_DIR')  OR define('SYSTEM_IMAGES_DIR', SYSTEM_RESOURCE . '/images');
 defined('SYSTEM_CSS_DIR')	  OR define('SYSTEM_CSS_DIR', SYSTEM_RESOURCE . '/css');
+defined('SYSTEM_JS_DIR')	  OR define('SYSTEM_JS_DIR', SYSTEM_RESOURCE . '/js');
 defined('SYSTEM_LIBRARY_DIR') OR define('SYSTEM_LIBRARY_DIR', SYSTEM_RESOURCE . '/library');
 defined('BOOTSTRAP_DIR') 	  OR define('BOOTSTRAP_DIR', SYSTEM_LIBRARY_DIR . '/bootstrap-3.3.7');

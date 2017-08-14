@@ -16,7 +16,8 @@ class User extends CI_Controller {
 
 	public function login()
 	{
-		$this->layout->view_element('user/login');
+		
+		//$this->layout->view_element('user/login');
 	}
 
 }
