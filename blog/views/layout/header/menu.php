@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-user">Login</button><!-- <a href="#" id="login-user">Login</a> --></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -53,3 +53,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 </header>
+<?php 
+// load login page
+$this->layout->view_element('user/login');
+?>

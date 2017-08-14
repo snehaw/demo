@@ -1240,7 +1240,6 @@ class CI_Loader {
 		}
 
 		$class_name = $prefix.$class;
-
 		// Is the class name valid?
 		if ( ! class_exists($class_name, FALSE))
 		{

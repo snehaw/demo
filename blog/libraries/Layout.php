@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 class Layout
 {
-	protected $ci;
+	protected $CI;
 
 	public function __construct()
 	{
@@ -46,6 +46,18 @@ class Layout
 			$this->CI->load->view($page);
 			$this->CI->load->view('layout/footer/footer_links');
 			$this->CI->load->view('layout/footer/footer');
+		}
+	}
+
+	/**
+	 * Used to load elements of page
+	 *
+	 * @return void
+	 **/
+	public function view_element($page = '')
+	{
+		if($page !== '') {
+			$this->CI->load->view('pages/'.$page);
 		}
 	}
 
