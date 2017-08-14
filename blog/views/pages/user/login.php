@@ -50,7 +50,7 @@
         				</div>
         				<div class="form-group">
         					<label for="exampleInputEmail1">Confirm Password</label>
-						    <input type="email" class="form-control" id="confirm_password" name="confirm_password" aria-describedby="passwordHelp" placeholder="Password">
+						    <input type="email" class="form-control" id="confirm_password" name="confirm_password" aria-describedby="ConfirmPasswordHelp" placeholder="Confirm Password">
 						    <!-- <small id="passwordHelp" class="form-text text-muted">Your registered email address.</small> -->
         				</div>
         				<div class="form-group">
