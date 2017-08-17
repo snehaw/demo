@@ -11,15 +11,15 @@
 }
 .bgimg-1 {
 	 /* The image used */
-    background-image: url("/demo/extras/system/images/img_parallax1.jpg");
+    background-image: url("/demo/extras/system/themes/default/images/img_parallax1.jpg");
 }
 .bgimg-2 {
 	 /* The image used */
-    background-image: url("/demo/extras/system/images/img_parallax2.jpg");
+    background-image: url("/demo/extras/system/themes/default/images/img_parallax2.jpg");
 }
 .bgimg-3 {
 	 /* The image used */
-    background-image: url("/demo/extras/system/images/img_parallax3.jpg");
+    background-image: url("/demo/extras/system/themes/default/images/img_parallax3.jpg");
 }
 body, html {
 	height: 100%;

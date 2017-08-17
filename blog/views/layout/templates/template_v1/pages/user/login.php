@@ -1,6 +1,7 @@
 <?php
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo  SYSTEM_CSS_DIR; ?>/common/login.css">
+<script type="text/javascript" src="<?php echo SYSTEM_JS_DIR; ?>/login.js"></script>
 <style type="text/css">
 	
 </style>
@@ -17,17 +18,20 @@
       <div class="modal-body">
       	 <div class="">
         	<div class="row">
-        		<div class="col-md-6">
-        			<h3>Sign In</h3>
-        			<form>
+            <div class="col-md-6">
+              <h3>Sign In</h3>
+            <div id="message_msg1"></div>
+        			<form id="user-login-form">
         				<div class="form-group">
         					<label for="exampleInputEmail1">Email</label>
+                  <div id="user_email_msg1"></div>
 						    <input type="email" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" placeholder="Enter email">
 						    <small id="emailHelp" class="form-text text-muted">Your registered email address.</small>
         				</div>
         				<div class="form-group">
         					<label for="exampleInputEmail1">Password</label>
-						    <input type="email" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Password">
+                  <div id="password_msg1"></div>
+						    <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Password">
 						    <!-- <small id="passwordHelp" class="form-text text-muted">Your registered email address.</small> -->
         				</div>
         				<div class="form-group">
@@ -37,24 +41,28 @@
         		</div>
         		<div class="col-md-6 register">
         			<h3>Sign up</h3>
-        			<form>
+              <div id="message_msg2"></div>
+        			<form id="user-register-form">
         				<div class="form-group">
         					<label for="exampleInputEmail1">Email</label>
-						    <input type="email" class="form-control" id="user_email" name="user_email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <div id="user_email_regis_msg2"></div>
+						    <input type="email" class="form-control" id="user_email_regis" name="user_email_regis" aria-describedby="emailHelp" placeholder="Enter email">
 						    <small id="emailHelp" class="form-text text-muted">Your registered email address.</small>
         				</div>
         				<div class="form-group">
         					<label for="exampleInputEmail1">Password</label>
-						    <input type="email" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Password">
+                  <div id="password_regis_msg2"></div>
+						    <input type="password" class="form-control" id="password_regis" name="password_regis" aria-describedby="passwordHelp" placeholder="Password">
 						    <!-- <small id="passwordHelp" class="form-text text-muted">Your registered email address.</small> -->
         				</div>
         				<div class="form-group">
         					<label for="exampleInputEmail1">Confirm Password</label>
-						    <input type="email" class="form-control" id="confirm_password" name="confirm_password" aria-describedby="ConfirmPasswordHelp" placeholder="Confirm Password">
+                  <div id="confirm_password_msg2"></div>
+						    <input type="password" class="form-control" id="confirm_password" name="confirm_password" aria-describedby="ConfirmPasswordHelp" placeholder="Confirm Password">
 						    <!-- <small id="passwordHelp" class="form-text text-muted">Your registered email address.</small> -->
         				</div>
         				<div class="form-group">
-						    <button type="button" class="btn btn-primary">Login</button>
+						    <button type="button" class="btn btn-primary" id="user-register-btn" >Register</button>
         				</div>
         			</form>
         		</div>
@@ -62,8 +70,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+       <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>

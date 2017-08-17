@@ -3,3 +3,14 @@ README:
 1. Added Blog Controller.
 2. Added User Controller.
 3. Added CI_Auth Library Controller.
+
+16 August
+1. Worked on private config to add theme and template config for the site
+2. Configuartion that can be changed constants.php, privatec_config.php "theme" value to can be changed, and template value in private_config.php.
+
+17 August
+ALTER TABLE `user` ADD `username` VARCHAR(75) NOT NULL AFTER `user_type_id`, ADD `password` VARCHAR(255) NOT NULL AFTER `username`;
+1. Added field for the username and password in user table.
+2. Classification of ajax error messages 
+	1. if validation error then key is field_name and value
+	2. if another type of error the key is message and value

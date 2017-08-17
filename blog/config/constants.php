@@ -93,12 +93,18 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 |
 */
 $parent_folder_name = "demo";
+$theme = 'default';
 
 defined('ROOT_DIR')   	      OR define('ROOT_DIR', '/' . $parent_folder_name); //  set the root folder for the site
 defined('EXTRAS_DIR') 	      OR define('EXTRAS_DIR', ROOT_DIR . '/extras');
 defined('SYSTEM_RESOURCE')    OR define('SYSTEM_RESOURCE', EXTRAS_DIR . '/system');
-defined('SYSTEM_IMAGES_DIR')  OR define('SYSTEM_IMAGES_DIR', SYSTEM_RESOURCE . '/images');
-defined('SYSTEM_CSS_DIR')	  OR define('SYSTEM_CSS_DIR', SYSTEM_RESOURCE . '/css');
-defined('SYSTEM_JS_DIR')	  OR define('SYSTEM_JS_DIR', SYSTEM_RESOURCE . '/js');
+defined('DEFAULT_THEME')	  OR define('DEFAULT_THEME', '/themes/'.$theme);
+defined('SYSTEM_IMAGES_DIR')  OR define('SYSTEM_IMAGES_DIR', SYSTEM_RESOURCE . DEFAULT_THEME . '/images');
+defined('SYSTEM_CSS_DIR')	  OR define('SYSTEM_CSS_DIR', SYSTEM_RESOURCE . DEFAULT_THEME . '/css');
+defined('SYSTEM_JS_DIR')	  OR define('SYSTEM_JS_DIR', SYSTEM_RESOURCE . DEFAULT_THEME . '/js');
 defined('SYSTEM_LIBRARY_DIR') OR define('SYSTEM_LIBRARY_DIR', SYSTEM_RESOURCE . '/library');
 defined('BOOTSTRAP_DIR') 	  OR define('BOOTSTRAP_DIR', SYSTEM_LIBRARY_DIR . '/bootstrap-3.3.7');
+
+// user type
+define('ADMIN', 1);
+define('USER', 2);

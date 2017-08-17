@@ -8,10 +8,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Layout
 {
 	protected $CI;
+	protected $theme;
+	protected $template;
 
 	public function __construct()
 	{
         $this->CI =& get_instance();
+
+        // Used to get the default theme and view template
+        $this->theme = $this->CI->config->item('theme');
+        $this->template = 'layout/templates/' . $this->CI->config->item('template');
 	}
 
 	/*
@@ -21,16 +27,18 @@ class Layout
 	public function home_layout($page = "")
 	{
 		if($page !== "") {
-			$this->CI->load->view('layout/header/header');
-			$this->CI->load->view('layout/header/menu');
+			$this->CI->load->view($this->template.'/header/header');
+			$this->CI->load->view($this->template.'/header/common_js');
+			$this->CI->load->view($this->template.'/header/menu');
 			$this->CI->load->view($page);
-			$this->CI->load->view('layout/footer/footer_links');
-			$this->CI->load->view('layout/footer/footer');
+			$this->CI->load->view($this->template.'/footer/footer_links');
+			$this->CI->load->view($this->template.'/footer/footer');
 		} else {
-			$this->CI->load->view('layout/header/header');
-			$this->CI->load->view('layout/header/menu');
-			$this->CI->load->view('layout/footer/footer_links');
-			$this->CI->load->view('layout/footer/footer');
+			$this->CI->load->view($this->template.'/header/header');
+			$this->CI->load->view($this->template.'/header/common_js');
+			$this->CI->load->view($this->template.'/header/menu');
+			$this->CI->load->view($this->template.'/footer/footer_links');
+			$this->CI->load->view($this->template.'/footer/footer');
 		}
 	}
 
@@ -41,11 +49,12 @@ class Layout
 	public function general_layout($page = "")
 	{
 		if($page !== "") {
-			$this->CI->load->view('layout/header/header_general');
-			$this->CI->load->view('layout/header/menu');
+			$this->CI->load->view($this->template.'/header/common_js');
+			$this->CI->load->view($this->template.'/header/header_general');
+			$this->CI->load->view($this->template.'/header/menu');
 			$this->CI->load->view($page);
-			$this->CI->load->view('layout/footer/footer_links');
-			$this->CI->load->view('layout/footer/footer');
+			$this->CI->load->view($this->template.'/footer/footer_links');
+			$this->CI->load->view($this->template.'/footer/footer');
 		}
 	}
 
@@ -57,7 +66,7 @@ class Layout
 	public function view_element($page = '')
 	{
 		if($page !== '') {
-			$this->CI->load->view('pages/'.$page);
+			$this->CI->load->view($this->template.'/pages/'.$page);
 		}
 	}
 

@@ -20,6 +20,7 @@ class CI_Auth
 	public function __construct()
 	{
         $this->CI =& get_instance();
+        $this->CI->load->model('user_model');
 	}
 
 	/**
@@ -56,11 +57,23 @@ class CI_Auth
 	/**
 	 * Funtion to login user
 	 *
-	 * @return void
+	 * @param $data User login data
+	 * @return Boolean
 	 **/
-	public function login()
+	public function login($data = FALSE)
 	{
-		echo "hello";
+		if($data != FALSE) {
+			$user = $this->CI->user_model->get_user($data);
+			if((!empty($user)) && $user != FALSE) {
+				if(password_verify($data['password'], $user[0]['password'])) {
+					return TRUE;					
+				} else {
+					return FALSE;
+				}
+			} else {
+				return FALSE;
+			}
+		}
 	}
 
 }
