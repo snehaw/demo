@@ -49,8 +49,8 @@ class Layout
 	public function general_layout($page = "")
 	{
 		if($page !== "") {
-			$this->CI->load->view($this->template.'/header/common_js');
 			$this->CI->load->view($this->template.'/header/header_general');
+			$this->CI->load->view($this->template.'/header/common_js');
 			$this->CI->load->view($this->template.'/header/menu');
 			$this->CI->load->view($page);
 			$this->CI->load->view($this->template.'/footer/footer_links');
@@ -67,6 +67,19 @@ class Layout
 	{
 		if($page !== '') {
 			$this->CI->load->view($this->template.'/pages/'.$page);
+		}
+	}
+
+	/**
+	* Used to load common pages without top menu
+	**/
+	public function template_page($page = '')
+	{
+		if($page !== '') {
+			$this->CI->load->view($this->template.'/header/header_general');
+			$this->CI->load->view($this->template.'/header/common_js');
+			$this->CI->load->view($this->template.'/pages/'.$page);
+			$this->CI->load->view($this->template.'/footer/footer');
 		}
 	}
 
