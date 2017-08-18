@@ -25,7 +25,7 @@ class User extends CI_Controller {
 	{
 		$post_data = $this->input->post();
 		if(!empty($post_data) && is_array($post_data)) {
-			$validation = $this->_validate_user_login($post_data);
+			$validation = $this->common->validate_user_login($post_data);
 			if($validation === TRUE) {
 				$data['username'] = $post_data['user_email'];
 				$data['password'] = $post_data['password'];
@@ -81,24 +81,6 @@ class User extends CI_Controller {
 				$result['error'] = $this->format_error_array($validation);
 				echo json_encode($result);exit;
 			}
-		}
-	}
-
-	/**
-	* Private Function to validate User Login data
-	*
-	* @param $data Post array containing user information from login form
-	* @return Array/Boolean
-	**/
-	private function _validate_user_login($data)
-	{
-		$this->form_validation->set_data($data);
-		$this->form_validation->set_rules('user_email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		if($this->form_validation->run() == FALSE){
-			return $this->form_validation->error_array();
-		} else {
-			return TRUE;
 		}
 	}
 

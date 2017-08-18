@@ -66,6 +66,7 @@ class CI_Auth
 			$user = $this->CI->user_model->get_user($data);
 			if((!empty($user)) && $user != FALSE) {
 				if(password_verify($data['password'], $user[0]['password'])) {
+					$this->set_user_session($user);
 					return TRUE;					
 				} else {
 					return FALSE;
@@ -73,6 +74,25 @@ class CI_Auth
 			} else {
 				return FALSE;
 			}
+		}
+	}
+
+	/**
+	* Used to set the user session after login
+	* 
+	* @param $data user data to Be set in session
+	* @return void
+	**/
+	private function set_user_session($data = FALSE)
+	{
+		if($data != FALSE) {
+			$this->session->set_userdata(
+				array(
+					'USER_AUTH_ID' => $data[0]['user_id'],
+					'USER_AUTH_TYPE_ID' => $data[0]['user_type_id'],
+					'USER_NAME' => $data[0]['first_name'],
+					)
+				);
 		}
 	}
 

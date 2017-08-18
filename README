@@ -14,3 +14,6 @@ ALTER TABLE `user` ADD `username` VARCHAR(75) NOT NULL AFTER `user_type_id`, ADD
 2. Classification of ajax error messages 
 	1. if validation error then key is field_name and value
 	2. if another type of error the key is message and value
+
+18 August
+1. Worked on admin section added dashboard.
