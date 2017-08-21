@@ -73,12 +73,12 @@ class Layout
 	/**
 	* Used to load common pages without top menu
 	**/
-	public function template_page($page = '')
+	public function template_page($page = '', $data = '')
 	{
 		if($page !== '') {
 			$this->CI->load->view($this->template.'/header/header_general');
 			$this->CI->load->view($this->template.'/header/common_js');
-			$this->CI->load->view($this->template.'/pages/'.$page);
+			$this->CI->load->view($this->template.'/pages/'.$page, $data);
 			$this->CI->load->view($this->template.'/footer/footer');
 		}
 	}

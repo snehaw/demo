@@ -6,7 +6,7 @@ class User extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('form_validation');
+		// $this->load->library('form_validation');
 		// $this->load->model('user_model');
 	}
 
@@ -37,12 +37,12 @@ class User extends CI_Controller {
 				} else {
 					$result['status'] = FALSE;
 					$err['message'] = 'Invalid Username or Password';
-					$result['error'] = $this->format_error_array($err);
+					$result['error'] = $this->common->format_error_array($err);
 					echo json_encode($result);exit;
 				}
 			} else {
 				$result['status'] = FALSE;
-				$result['error'] = $this->format_error_array($validation);
+				$result['error'] = $this->common->format_error_array($validation);
 				echo json_encode($result);exit;
 			}
 		}
@@ -68,17 +68,17 @@ class User extends CI_Controller {
 				if($reslt) {
 					$result['status'] = TRUE;
 					$msg['message'] = 'User created successfully. Check verification email on your email Id.';
-					$result['success'] = $this->format_error_array($msg);
+					$result['success'] = $this->common->format_error_array($msg);
 					echo json_encode($result);exit;
 				} else {
 					$result['status'] = FALSE;
 					$err['message'] = 'Could not register';
-					$result['error'] = $this->format_error_array($err);
+					$result['error'] = $this->common->format_error_array($err);
 					echo json_encode($result);exit;
 				}
 			} else {
 				$result['status'] = FALSE;
-				$result['error'] = $this->format_error_array($validation);
+				$result['error'] = $this->common->format_error_array($validation);
 				echo json_encode($result);exit;
 			}
 		}
@@ -90,7 +90,7 @@ class User extends CI_Controller {
 	* @param $data Post array containing user information from user registration form
 	* @return Array/Boolean
 	**/
-	private function _validate_user_registration($data)
+	/*private function _validate_user_registration($data)
 	{
 		$this->form_validation->set_data($data);
 		$this->form_validation->set_rules('user_email_regis', 'Email', 
@@ -102,7 +102,7 @@ class User extends CI_Controller {
 		} else {
 			return TRUE;
 		}
-	}
+	}*/
 
 	/**
 	* Used to format validation error array for json response
@@ -110,7 +110,7 @@ class User extends CI_Controller {
 	* @param $error_array error array from form validation
 	* @return Array
 	**/
-	private function format_error_array($error_array)
+	/*private function format_error_array($error_array)
 	{
 		$arr = [];
 		$i = 0;
@@ -120,7 +120,7 @@ class User extends CI_Controller {
 			$i++;
 		}
 		return $arr;
-	}
+	}*/
 }
 
 /* End of file User.php */

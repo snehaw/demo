@@ -18,9 +18,11 @@ if(!empty($this->input->cookie("admin_password"))) {
                     <form role="form" method="post">
                         <fieldset>
                             <div class="form-group">
+                            <span class="error"><?=@$error['admin_email']?></span>
                                 <input class="form-control" placeholder="E-mail" name="admin_email" type="email" autofocus value="<?=@$admin_email?>">
                             </div>
                             <div class="form-group">
+                            <span class="error"><?=@$error['admin_password']?></span>
                                 <input class="form-control" placeholder="Password" name="admin_password" type="password" value="<?=@$admin_password?>">
                             </div>
                             <div class="checkbox">

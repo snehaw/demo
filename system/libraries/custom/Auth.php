@@ -86,7 +86,7 @@ class CI_Auth
 	private function set_user_session($data = FALSE)
 	{
 		if($data != FALSE) {
-			$this->session->set_userdata(
+			$this->CI->session->set_userdata(
 				array(
 					'USER_AUTH_ID' => $data[0]['user_id'],
 					'USER_AUTH_TYPE_ID' => $data[0]['user_type_id'],
